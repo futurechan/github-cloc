@@ -7,4 +7,6 @@ const instance = new Lib({
     password: argv.p
 }, argv.o)
 
-instance.runCLoC();
+// instance.runCLoC();
+
+instance.runCommitCounts()
