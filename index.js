@@ -1,12 +1,19 @@
-const Lib = require('./lib')
+const GithubApi = require('./lib/githubApi')
+const JobRunner = require('./lib/jobRunner')
 
 var argv = require('minimist')(process.argv.slice(2));
 
-const instance = new Lib({
+const creds = {
     username: argv.u,
     password: argv.p
-}, argv.o)
+};
 
-// instance.runCLoC();
+const orgName = argv.o;
 
-instance.runCommitCounts()
+const githubApi = new GithubApi(creds, orgName);
+
+const Job = require('./lib/jobs/' + argv.j);
+
+const job = new Job(githubApi);
+
+new JobRunner(job).run();
