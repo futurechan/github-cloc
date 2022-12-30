@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.2",
-    "json2csv": "^3.7.3",
+    "json2csv": "^5.0.7",
     "lodash": "^4.17.21",
     "minimist": "^1.2.6",
     "rest": "^2.0.0"
